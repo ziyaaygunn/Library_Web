@@ -1,0 +1,26 @@
+﻿@model Categories
+
+<form asp-action="DeletePost" method="post">
+	<input type="hidden" asp-for="Id"/>
+	<div class="border p-3 mt-5">
+		<div class="row pb-3">
+			<h2 class="text-primary">Delete a Book Category</h2>
+		</div>
+		<hr />
+		<div class="mb-3">
+			<label asp-for="Name" class="p-0"></label>
+			<input asp-for="Name" disabled class="form-control" />
+			
+		</div>
+
+
+		<button type="submit" class="btn btn-lg btn-primary" style="width:200px">Delete a Book Category</button> 
+
+		<a asp-controller="Categories" asp-action="Index" class="btn btn-lg btn-primary" style="width:200px">Return to Book Categories</a>
+
+	</div>
+
+
+
+
+</form>

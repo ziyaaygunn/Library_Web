@@ -1,0 +1,35 @@
+﻿@model Hire
+
+<form asp-action="DeletePost" method="post">
+	<input type="hidden" asp-for="Id"/> 
+	<div class="border p-3 mt-5">
+		<div class="row pb-3">
+			<h2 class="text-primary">Delete Hire Registration</h2>
+		</div>
+		<hr />
+		 
+		<div class="mb-3">
+			<label asp-for="StudenId" class="p-0"></label>
+			<input asp-for="StudenId" disabled class="form-control" />
+			
+
+		</div>
+		
+		<div class="mb-3">
+			<label asp-for="BookId" class="p-0"></label>
+			<select asp-for="BookId" asp-items="ViewBag.BookList" disabled class="form-select"> </select>
+		
+
+
+		</div>
+
+		<button type="submit" class="btn btn-lg btn-primary" style="width:200px">Delete Hire Registration</button> 
+		
+		<a asp-controller="Hire" asp-action="Index" class="btn btn-lg btn-primary" style="width:200px">Return to Hire List </a>
+
+	</div>
+
+
+
+
+</form>

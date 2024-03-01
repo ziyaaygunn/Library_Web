@@ -1,0 +1,59 @@
+﻿@model List<Categories> //Listeyi çekmek için yazıyoruz.
+@if (TempData["successful"] != null)
+{
+	<h2 style="color:red ">
+		@TempData["successful"]
+		
+	</h2>
+}
+<div class="container">
+	<div class="row pt-3 pb-4">
+		<div>
+			<h1>Categories</h1>
+		</div>
+	</div>
+	<table class="table table-bordered">
+		<thead>
+			@* headder kısmı *@
+			<tr>
+				@* satırı *@
+
+				<th>Id</th> @* tablo başlığı *@
+				<th>Category</th>
+
+			</tr>
+
+
+		</thead>
+
+		<tbody>
+			@foreach (var Categories in Model)
+			{
+
+
+				<tr>
+					<td>@Categories.Id</td> @* sütun *@
+					<td>@Categories.Name</td>
+					<td> <a asp-controller="Categories" asp-action="Update" asp-route-id="@Categories.Id" type="button" class="btn btn-success" style="width:150px">Update</a> @* güncelleme butonu *@ </td>
+
+					<td> <a asp-controller="Categories" asp-action="Delete" asp-route-id="@Categories.Id" type="button" class="btn btn-danger" style="width:150px">Delete</a>  </td> @* silme butonu *@
+				</tr>
+
+			}
+		</tbody>
+
+
+
+	</table>
+
+	<div class="row pt-3 pb-2">
+		<div>
+			<a asp-controller="Categories" asp-action="Add" class="btn btn-lg btn-primary" type="button">Make a New Book Category</a>
+
+		</div>
+
+
+
+	</div>
+
+</div>

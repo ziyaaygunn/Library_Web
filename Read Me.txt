@@ -1,0 +1,4 @@
+﻿admin: Admin-123
+student: Student-123
+
+Herkese merhaba, MVC katmanlı mimarisini kullanarak 
